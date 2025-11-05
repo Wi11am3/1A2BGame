@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1A2B 猜數字遊戲</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container ">
+
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="text-center">1A2B 猜數字遊戲</h1>
+            </div>
+        </div>
+
+        <div class="alert alert-dark" role="alert">
+            <strong>遊戲規則:</strong>
+            <ul class="mb-0 mt-2">
+                <li>系統會產生一個4位數字(0-9,不重複)</li>
+                <li><strong>A</strong>代表數字和位置都正確</li>
+                <li><strong>B</strong>代表數字正確但位置錯誤</li>
+                <li>猜對 4A0B 就獲勝！</li>
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <h5>
+                <strong>猜測次數：</strong>
+                <span class="badge text-bg-dark" id="attemptCount">0</span>
+            </h5>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control text-center" id="guessInput" maxlength="4" placeholder="輸入4位數字">
+
+            <button type="button" class="btn btn-dark " onclick="makeGuess()">
+                猜測
+            </button>
+        </div>
+
+
+        <div class="text-danger text-center my-2" id="errorMessage"></div>
+
+        <div id="winMessage"></div>
+
+        <div class="mt-4">
+            <h6 class="text-muted">
+                <i></i> 猜測記錄
+            </h6>
+            <div id="historyList"></div>
+        </div>
+
+        <div class="btn-group " role="group">
+            <button type="button" class="btn btn-secondary" onclick="resetGame()">重新開始</button>
+            <button type="button" class="btn btn-warning" onclick="peekAnswer()">偷看答案</button>
+        </div>
+    </div>
+
+    <script></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
